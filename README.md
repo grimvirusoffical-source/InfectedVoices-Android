@@ -1,2 +1,4 @@
 # InfectedVoices-Android
-Infected Voices Cap Android / Play upload pipeline
+
+Capacitor Android / Play upload pipeline.
+Consumes Core `build:web` dist. No raw AAB on marketing CDN.
