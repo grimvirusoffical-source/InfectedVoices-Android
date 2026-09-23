@@ -6,6 +6,13 @@ import { assertCorePin, root } from './core-pin.mjs';
 const args = process.argv.slice(2);
 const banned = new Set(['--submit', '--upload', '--eas', '--release', 'submit', 'upload', 'eas', 'release']);
 if (args.some((arg) => banned.has(arg))) {
+  const playKey = path.join(root, '.secrets', 'google-play-service-account.json');
+  const hasPlayKey = fs.existsSync(playKey);
+  const hasEasToken = Boolean(process.env.EXPO_TOKEN);
+  if (!hasPlayKey || !hasEasToken) {
+    console.error('Refusing store upload. Play and EAS credentials are not in this shell. --submit, --upload, and --eas exit 2 until those credentials exist.');
+    process.exit(2);
+  }
   console.error('Refusing store upload. This shell does not run EAS submit or a Play upload.');
   process.exit(2);
 }

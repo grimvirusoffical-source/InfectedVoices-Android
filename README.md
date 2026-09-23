@@ -6,7 +6,7 @@ Thin Capacitor Android shell for Infected Voices. It consumes the shared [Infect
 
 Core (`https://github.com/grimvirusoffical-source/InfectedVoices`) is the feature parity source. A signed-in account is Free. Free, Basic, and Pro, plus the one-time 7-day trials, already live in Core (`basicTrialUsedAt`, `proTrialUsedAt`). This shell does not reimplement plans or DSP.
 
-`/get` is store-only for mobile and is the same page as `/download`: App Store and Google Play. No raw `.ipa` and no raw `.aab` go on a CDN.
+`/get` is store-only for mobile and is the same page as `/download`: App Store and Google Play. No raw `.ipa` and no raw `.aab` or `.apk` go on a marketing CDN.
 
 Windows is signed, and the installer SHA-256 is published beside that file. The checksum here is a placeholder until a real Release exists. The GitHub source zipball is source, not the Windows app.
 
