@@ -9,9 +9,9 @@ export const expectedPin = {
   name: 'InfectedVoices',
   url: 'https://github.com/grimvirusoffical-source/InfectedVoices',
   branch: 'main',
-  commit: '2fb04c2ce1ac4e49ea9105207f436b8b6cf1d80d',
-  subject: 'Merge Cap PR #3: Core mobile clear bar (Stress PASS)',
-  stress: 'CLEAR BAR PASS',
+  commit: '667ae1cb2edac499b773fb9f688b6b46484a558d',
+  subject: 'Harden audio edge cases and Windows payload builds',
+  stress: '15 TESTS PASS + PAYLOAD VERIFY PASS',
   packageVersion: '0.7.0',
   nativeShell: '0.6.6-mobile.2',
   vendorPayload: '0.6.6-core6.1',
@@ -57,7 +57,7 @@ export function assertCorePin() {
     if (JSON.stringify(pin[key]) !== JSON.stringify(value)) mismatches.push(key);
   }
   if (mismatches.length) {
-    throw new Error('core-pin.json does not match the Cap PR #3 pin: ' + mismatches.join(', '));
+    throw new Error('core-pin.json does not match the hardened Core pin: ' + mismatches.join(', '));
   }
 
   const modules = fs.readFileSync(path.join(root, '.gitmodules'), 'utf8');
